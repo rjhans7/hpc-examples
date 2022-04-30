@@ -18,3 +18,26 @@ gcc -Wall -g -o mtx matrix_openmp.cpp -fopenmp
 ./mtx 16
 ```
 
+## Comandos en Khipu
+
+```
+tmux new -s demo
+
+# sesion 1
+sbatch --tasks-per-node=32 --nodelist=n003 mpi.sh
+
+## Prueba con dos nodos
+sbatch -N 2 --tasks-per-node=32 --nodelist=n002,n003  mpi.sh 
+
+# sesion 2
+
+watch cat mpi_salida.txt
+
+# session 3
+ssh n003
+htop
+
+# session 4
+ssh n004
+
+```
